@@ -37,7 +37,9 @@ namespace SportStore
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseMvc(routes => {
-
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Product}/{action=List}/{id?}");
             });
         }
     }
